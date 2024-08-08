@@ -1,0 +1,93 @@
+<div class="container-fluid text-center ">
+    <div class="row h-sm-25 h-md-25 h-md-100 h-lg-100">
+        <div class="col-sm-4 col-md-2 col-lg-1 bg-primary">
+            <!-- <h2 class="mt-4 text-white">DashBoard</h2> -->
+           <div class="home"> 
+            <mat-list role="list">
+                <mat-list-item role="listitem">
+                    <span class="d-inline-flex align-items-center">
+                        <mat-icon style="color: white;" aria-hidden="false"  aria-label="Example home icon" fontIcon="group"></mat-icon>
+                        <span class="text-nowrap text-white p-2">A Y G</span>
+                      </span>
+                   </mat-list-item>   
+            </mat-list>
+        </div>
+        </div>
+        <div class="col-sm-4 col-md-10 col-lg-11">
+            <div class="row bg-light bg-gradient py-4">
+                <div class="col-1">
+                    <h2 class="text-nowrap text-primary">AyyrianGroup</h2>
+
+                </div>
+                
+            </div>
+             <div>             
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb m-4">
+                      <li class="breadcrumb-item"><a href="#">All Users</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                    </ol>
+                  </nav>
+              <div class="border border-light rounded  mt-5">
+            <div class="row m-4">
+                <mat-card appearance="outlined" class="bg-light bg-gradient">
+                    <mat-card-content>
+                        <div class="table-responsive">
+                            <table mat-table [dataSource]="dataSource" matSort
+                                (matSortChange)="announceSortChange($event)" class="mat-elevation-z8 bg-light bg-gradient">
+                                <!-- Define your columns here -->
+                                <ng-container matColumnDef="id">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header
+                                        sortActionDescription="Sort by number">Id </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="username">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header
+                                        sortActionDescription="Sort by name">
+                                        Username </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="name">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header
+                                        sortActionDescription="Sort by weight"> Name </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="email">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header
+                                        sortActionDescription="Sort by weight">Email Address</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="zipcode">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header
+                                        sortActionDescription="Sort by weight">Zip Code</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.address.zipcode}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="phone">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header
+                                        sortActionDescription="Sort by weight">Phone</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="city">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header
+                                        sortActionDescription="Sort by weight">City</th>
+                                    <td mat-cell *matCellDef="let element"> {{element.address.city}} </td>
+                                </ng-container>
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            </table>
+
+                        </div>
+                        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                            aria-label="Select page of periodic elements"></mat-paginator>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+           </div>
+        </div>
+    </div>
