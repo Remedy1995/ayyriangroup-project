@@ -3,3 +3,4 @@
 #This application was  built using Angular material and responsive all devices
 #To run the project cd into project run npm install --force 
 #go to the root of the application and run ng serve to serve app on port 4200
+#My name is Japhet Adjetey Adjei
